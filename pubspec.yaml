@@ -1,7 +1,8 @@
 name: toast_notification
 description: You know threads app? Well this toast notification is inspired from Threads toast notification style but also allows you to customize almost everything about it. Stay tuned with us for future updates on it.
 version: 0.0.1
-homepage:
+author: Ibraheem Bin Haseeb (ibraheemhaseeb7@gmail.com)
+homepage: https://github.com/IbraheemHaseeb7/flutter_toast_notification
 
 environment:
   sdk: ">=3.0.5 <4.0.0"
