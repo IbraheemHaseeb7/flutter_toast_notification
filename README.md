@@ -28,7 +28,7 @@ Alternatively you can add the following lines in your `pubsec.yaml` file.
 dependencies:
   flutter:
     sdk: flutter
-  toast_notification: 0.0.2
+  toast_notification: 0.0.3
 ```
 
 ### _Basic Setup_
