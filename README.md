@@ -88,7 +88,7 @@ class MyPageState extends State<MyPage> {
 
 ### _Example of toast notification_
 
-![Examples of toast notification](gifs/toasterGif.gif)
+![Examples of toast notification](https://raw.githubusercontent.com/IbraheemHaseeb7/flutter_toast_notification/main/gifs/toasterGif.gif)
 <br />
 Code for the shown example:
 
