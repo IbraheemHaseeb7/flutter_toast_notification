@@ -28,61 +28,18 @@ Alternatively you can add the following lines in your `pubsec.yaml` file.
 dependencies:
   flutter:
     sdk: flutter
-  toast_notification: 0.0.3
+  toast_notification: 1.0.0
 ```
 
 ### _Basic Setup_
 
-Create the controller somewhere on the top first preferbly out of the `builder function`.
+Add this snippet somewhere in your code, maybe on a function call...
 
 ```dart
-ToasterController toasterController = ToasterController();
-```
-
-Now add this somewhere in your code but make sure that `Toaster` has to be put inside the children of `Stack` widget.
-
-```dart
-// some code...
-
-Stack(children: [
-    // widgets...
-
-    Toaster(
-        data: "Successfully posted something",
-        type: ToasterType.Check,
-        controller: toasterController)
-])
-```
-
-### _Example of Full Page_
-
-This is a demonstration of how your page should look like to opimally use our package.
-
-```dart
-class MyPage extends StatefulWidget {
-    MyPage({ super.key });
-
-    @override
-    MyPageState createState() => MyPageState();
-}
-
-class MyPageState extends State<MyPage> {
-
-    final ToasterController toasterController = ToasterController();
-
-    @override
-    Widget build(BuildContext context) {
-        return Scaffold: (body: Stack(
-            children: [
-                // Your Components...
-
-                Toaster(
-                    date: "Sucessfully completed something",
-                    type: ToasterType.Check,
-                    controller: toasterController)
-            ]
-        ));
-    }
+onClick() {
+    ToastMe(
+        text: "Successfully posted something",
+        type: ToasterType.Check).showToast(context);
 }
 ```
 
@@ -93,10 +50,10 @@ class MyPageState extends State<MyPage> {
 Code for the shown example:
 
 ```dart
-Toaster(
-    data: "Invalid OTP, try again!",
+ToastMe(
+    text: "Invalid OTP, try again!",
     type: ToasterType.Error,
-    controller: toasterController,)
+    controller: toasterController,).showToast(context);
 ```
 
 ## Additional information
@@ -116,13 +73,13 @@ There are currently three types but we plan to add more types in the future.
 By default the colors for the icon and text is set to `white` and the background color is set to `#1a1a1a`. If you want to set custom colors, you can do it like so.
 
 ```dart
-Toaster(
-    data: "Successfully completed something",
+ToastMe(
+    text: "Successfully completed something",
     type: ToasterType.Check,
     controller: toasterController,
     iconColor: Colors.white,
     backgroundColor: Colors.black,
-    textColor: Colors.white)
+    textColor: Colors.white).showToast(context);
 ```
 
 ### _Without Duration_
@@ -135,15 +92,20 @@ toasterController.end();
 
 ### _With Duration_
 
-If you set the duration as given below, what would happen is that toast notification would automatically go down after the given time. Note that duration is given in `miliseconds` and its data type is `int`.
+If you set the duration as given below, what would happen is that toast notification would automatically go down after the given time. Note that duration is given in `miliseconds` and its data type is `int?`.
+
+Create the controller somewhere on the top first preferbly out of the `builder function`.
 
 ```dart
-Toaster(
+final ToasterController toasterController = ToasterController();
+```
+
+```dart
+ToastMe(
     data: "Successfully posted something",
     type: ToasterType.Check,
-    controller: toasterController,
     duration: 2000 // in miliseconds
-    )
+    ).showToast(context);
 ```
 
 ### _Change Text Later on_
